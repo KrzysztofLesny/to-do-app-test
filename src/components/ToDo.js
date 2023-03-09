@@ -6,10 +6,7 @@ export const ToDo = ({ toDo, removeToDo }) => {
     const [isDone, setIsDone] = useState(false)
 
     const toggleDone = () => {
-        setIsDone(currentIsDone => {
-            return !currentIsDone
-        })
-        console.log(isDone)
+        setIsDone(currentIsDone => !currentIsDone)
     }
 
     return (
