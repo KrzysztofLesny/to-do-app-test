@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import { ToDoInputForm } from './components/ToDoInputForm';
+import { ToDosList } from './components/ToDosList';
 
-function App() {
+import styles from './App.module.css'
+
+const App = () => {
+  const [toDos, setToDos] = useState([]);
+
+  const addToDo = (newToDo) => {
+    setToDos(currentToDos => {
+      return [...currentToDos, newToDo]
+    })
+  }
+
+  const removeToDo = (todoID) => {
+    setToDos(currentToDos => {
+      return currentToDos.filter((toDo) => (
+        todoID !== toDo.id
+      ))
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={styles.app}>
+      <header className={styles.header}>
+        <h1>TO DO APP</h1>
       </header>
+      <main className={styles.main}>
+        <ToDoInputForm addToDo={addToDo} />
+        <h2 className={styles.subHeader}>Tasks</h2>
+        {toDos.length ? <ToDosList toDos={toDos} removeToDo={removeToDo} /> : <p>Currently there are no tasks for you to do.</p>}
+      </main>
     </div>
   );
 }
