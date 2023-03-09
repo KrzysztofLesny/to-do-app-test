@@ -3,7 +3,7 @@ import { ToDo } from './ToDo'
 
 
 
-export const ToDosList = ({ toDos, removeToDo, editToDo }) => {
+export const ToDosList = ({ toDos, removeToDo }) => {
 
     return (
         <ul className={styles.toDoList}>
