@@ -1,9 +1,9 @@
-import styles from './styles/ToDosList.module.css'
-import { ToDo } from './ToDo'
-import { useToDos } from './ToDoContext'
+import styles from './ToDosList.module.css'
+import { ToDo } from '../ToDo/ToDo'
+import { useToDos } from '../../context/ToDoContext'
 
 export const ToDosList = () => {
-    const [toDos,, removeToDo] = useToDos([0, 2]);
+    const {toDos, removeToDo} = useToDos([0, 2]);
 
     return (
         <>

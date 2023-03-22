@@ -1,6 +1,6 @@
-import { ToDoInputForm } from './components/ToDoInputForm';
-import { ToDosList } from './components/ToDosList';
-import { ToDoProvider } from "./components/ToDoContext";
+import { ToDoInputForm } from './components/ToDoInputForm/ToDoInputForm';
+import { ToDosList } from './components/ToDosList/ToDosList';
+import { ToDoProvider } from "./context/ToDoContext";
 
 import styles from './App.module.css'
 

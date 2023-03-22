@@ -1,6 +1,6 @@
 import { useState } from "react"
-import styles from './styles/ToDo.module.css'
-import closeIcon from '../assets/icon-close.svg'
+import styles from './ToDo.module.css'
+import closeIcon from '../../assets/icon-close.svg'
 
 export const ToDo = ({ toDo, removeToDo }) => {
     const [isDone, setIsDone] = useState(false)

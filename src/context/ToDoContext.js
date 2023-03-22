@@ -22,7 +22,7 @@ export const ToDoProvider = ({ children }) => {
     }
 
     return (
-        <ToDoContext.Provider value={ [toDos, addToDo, removeToDo] }> 
+        <ToDoContext.Provider value={{ toDos, addToDo, removeToDo }}> 
             {children}
         </ToDoContext.Provider>
     )
