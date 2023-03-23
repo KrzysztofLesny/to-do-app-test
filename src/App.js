@@ -1,23 +1,32 @@
-import { ToDoInputForm } from './components/ToDoInputForm/ToDoInputForm';
-import { ToDosList } from './components/ToDosList/ToDosList';
-import { ToDoProvider } from "./context/ToDoContext";
+import { 
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom';
 
-import styles from './App.module.css'
+import RootLayout from './layouts/RootLayout';
+
+import Context from './pages/Context';
+import Home from './pages/Home';
+import Redux from './pages/Redux';
+import State from './pages/State';
+import NotFound from './pages/NotFound';
+
+const router = createBrowserRouter (
+  createRoutesFromElements (
+    <Route path='/' element={<RootLayout />} errorElement={<NotFound />}>
+      <Route index element={<Home />} />  
+      <Route path='context' element={<Context />} />
+      <Route path='state' element={<State />} />
+      <Route path='redux' element={<Redux />} />
+    </Route>
+  )
+)
 
 const App = () => {
   return (
-    <div className={styles.app}>
-      <header className={styles.header}>
-        <h1>TO DO APP</h1>
-      </header>
-      <main className={styles.main}>
-        <ToDoProvider>
-          <ToDoInputForm/>
-          <h2 className={styles.subHeader}>Tasks</h2>
-          <ToDosList/>
-        </ToDoProvider>
-      </main>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
