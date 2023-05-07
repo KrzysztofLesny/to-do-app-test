@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styles from './ToDo.module.css'
-import closeIcon from '../../../assets/icon-close.svg'
+import trashIcon from '../../../assets/trash.svg'
 
 export const ToDo = ({ toDo, removeToDo }) => {
     const [isDone, setIsDone] = useState(false)
@@ -10,6 +10,7 @@ export const ToDo = ({ toDo, removeToDo }) => {
     }
 
     return (
+        //how to add fill to svg?
         <li className={styles.toDoListItem}>
             <span 
                 onClick={() => toggleDone()} 
@@ -17,11 +18,13 @@ export const ToDo = ({ toDo, removeToDo }) => {
             >
                 {toDo.value}
             </span>
-            <div>
-                <span className={styles.removeIcon} onClick={() => removeToDo(toDo.id)}>
-                    <img src={closeIcon} alt="delete icon" title="Delete task"/>
-                </span>
-            </div>
+            {isDone &&
+                <div>
+                    <span className={styles.removeIcon} onClick={() => removeToDo(toDo.id)}>
+                        <img src={trashIcon} alt="delete icon" title="Delete task" />
+                    </span>
+                </div>
+            }
         </li>
     )
 }
