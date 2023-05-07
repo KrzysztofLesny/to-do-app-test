@@ -1,17 +1,17 @@
-import ToDoInputForm from '../../components/ToDoInputForm/';
-import ToDosList from '../../components/ToDosList';
-import { ToDoProvider } from "../../context/ToDoContext";
+import { ToDoInputForm } from '../../components/ToDoInputForm/';
+import { ToDosList } from '../../components/ToDosList';
+import { useToDos } from '../../context/ToDoContext'
 import styles from '../../App.module.css'
 
 export const Context = () => {
+    const {toDos, addToDo, removeToDo} = useToDos();
+
     return (
         <>
-            <ToDoProvider>
                 <h2 className={styles.subHeader}>using useContext</h2>
-                <ToDoInputForm/>
+                <ToDoInputForm addToDo={addToDo} />
                 <h2 className={styles.smallHeading}>Tasks</h2>
-                <ToDosList/>
-            </ToDoProvider>
+                <ToDosList toDos={toDos} removeToDo={removeToDo}/>
         </>
     )
 }

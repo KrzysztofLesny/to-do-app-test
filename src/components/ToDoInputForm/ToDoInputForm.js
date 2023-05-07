@@ -1,10 +1,8 @@
 import { useState } from "react"
 import styles from './ToDoInputForm.module.css'
-import { useToDos } from "../../context/ToDoContext";
 
-export const ToDoInputForm = () => {
+export const ToDoInputForm = ({addToDo}) => {
     const [toDo, setToDo] = useState('');
-    const  { addToDo } = useToDos();
 
     const resetForm = () => {
         setToDo('')

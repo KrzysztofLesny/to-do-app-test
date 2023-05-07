@@ -1,9 +1,7 @@
 import styles from './ToDosList.module.css'
-import ToDo from '../ToDo'
-import { useToDos } from '../../context/ToDoContext'
+import { ToDo } from './ToDo'
 
-export const ToDosList = () => {
-    const {toDos, removeToDo} = useToDos();
+export const ToDosList = ({toDos, removeToDo}) => {
 
     return (
         <>

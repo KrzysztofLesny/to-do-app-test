@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import StateToDoInputForm from '../../components/StateToDoInputForm';
-import StateToDosList from '../../components/StateToDosList';
+import { ToDoInputForm } from '../../components/ToDoInputForm';
+import { ToDosList } from '../../components/ToDosList';
 
 import styles from '../../App.module.css'
 
@@ -25,9 +25,9 @@ export const State = () => {
     return (
         <>
             <h2 className={styles.subHeader}>using useState</h2>
-            <StateToDoInputForm addToDo={addToDo} />
+            <ToDoInputForm addToDo={addToDo} />
             <h2 className={styles.smallHeading}>Tasks</h2>
-            <StateToDosList toDos={toDos} removeToDo={removeToDo} />
+            <ToDosList toDos={toDos} removeToDo={removeToDo} />
         </>
     )
 }

@@ -5,13 +5,13 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
-import RootLayout from './layouts/RootLayout';
+import { RootLayout } from './layouts/RootLayout';
 
-import Context from './pages/Context';
-import Home from './pages/Home';
-import Redux from './pages/Redux';
-import State from './pages/State';
-import NotFound from './pages/NotFound';
+import { Context } from './pages/Context';
+import { Home } from './pages/Home';
+import { Redux } from './pages/Redux';
+import { State } from './pages/State';
+import { NotFound } from './pages/NotFound';
 
 const router = createBrowserRouter (
   createRoutesFromElements (

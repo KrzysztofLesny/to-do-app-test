@@ -19,5 +19,8 @@ a:hover {
 }
 a.active,
 a.active:hover {
-  color: var(--backupBackgroundColor);
+  color: transparent;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
