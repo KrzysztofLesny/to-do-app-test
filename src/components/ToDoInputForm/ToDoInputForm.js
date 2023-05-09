@@ -1,6 +1,12 @@
 import { useState } from "react"
 import ReactDOM from "react-dom";
 import styles from './ToDoInputForm.module.css'
+import {InputFormBackdrop} from "../../styled-components/InputFormBackdrop";
+import {StyledForm} from "../../styled-components/StyledForm";
+import {StyledLabel} from "../../styled-components/StyledLabel";
+import {StyledTextInput} from "../../styled-components/StyledTextInput";
+import {StyledInputTextLabel} from "../../styled-components/StyledInputTextLabel";
+import {StyledInputTextUnderline} from "../../styled-components/StyledInputTextUnderline";
 
 export const ToDoInputForm = ({addToDo, closeForm}) => {
     const [toDo, setToDo] = useState('');
@@ -23,24 +29,23 @@ export const ToDoInputForm = ({addToDo, closeForm}) => {
 
     return ReactDOM.createPortal((
         // how to use <dialog>?
-        <div className={styles.inputFormBackdrop} onClick={() => closeForm()}>
-            <form className={styles.inputForm} onSubmit={handleSubmit} onClick={e => e.stopPropagation()}>
-                <label className={styles.inputTextWrapper}>
-                    <input
+        <InputFormBackdrop onClick={() => closeForm()}>
+            <StyledForm onSubmit={handleSubmit} onClick={e => e.stopPropagation()}>
+                <StyledLabel>
+                    <StyledTextInput
                         autoFocus 
                         placeholder=" "
-                        className={styles.inputText}
                         type="text"
                         value={toDo} 
                         onChange={(e) => setToDo(e.target.value)}
                     />
-                    <span className={styles.inputTextLabel}>Input To Do here:</span>
-                    <span className={styles.inputTextUnderline} />
-                </label>
+                    <StyledInputTextLabel>Input To Do here:</StyledInputTextLabel>
+                    <StyledInputTextUnderline/>
+                </StyledLabel>
                 <div>
                     <button className={styles.button}><span>Add To Do</span></button>
                 </div>
-            </form>
-        </div>
+            </StyledForm>
+        </InputFormBackdrop>
     ), document.body)
 }
