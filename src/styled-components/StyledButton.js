@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Button = styled.button`
-  background-color: hsl(271, 76%, 30%);
-  color: rgb(255, 255, 255);
+const StyledButton = styled.button`
+  background-color: var(--darkBlueBerry);
+  color: var(--white);
   border: none;
   font-size: 24px;
   line-height: 110%;
@@ -17,7 +17,7 @@ const Button = styled.button`
   
   :focus,
   :focus-visible {
-    outline: 3px solid rgb(255,111,97);;
+    outline: 3px solid var(--backupBackgroundColor);
   }
 `
-export { Button };
+export { StyledButton };

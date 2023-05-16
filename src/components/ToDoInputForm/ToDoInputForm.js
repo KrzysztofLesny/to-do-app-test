@@ -1,12 +1,12 @@
 import { useState } from "react"
 import ReactDOM from "react-dom";
-import styles from './ToDoInputForm.module.css'
 import {InputFormBackdrop} from "../../styled-components/InputFormBackdrop";
 import {StyledForm} from "../../styled-components/StyledForm";
 import {StyledLabel} from "../../styled-components/StyledLabel";
 import {StyledTextInput} from "../../styled-components/StyledTextInput";
 import {StyledInputTextLabel} from "../../styled-components/StyledInputTextLabel";
 import {StyledInputTextUnderline} from "../../styled-components/StyledInputTextUnderline";
+import {StyledSmallButton} from "../../styled-components/StyledSmallButton";
 
 export const ToDoInputForm = ({addToDo, closeForm}) => {
     const [toDo, setToDo] = useState('');
@@ -43,7 +43,7 @@ export const ToDoInputForm = ({addToDo, closeForm}) => {
                     <StyledInputTextUnderline/>
                 </StyledLabel>
                 <div>
-                    <button className={styles.button}><span>Add To Do</span></button>
+                    <StyledSmallButton><span>Add To Do</span></StyledSmallButton>
                 </div>
             </StyledForm>
         </InputFormBackdrop>

@@ -11,17 +11,18 @@ const StyledTextInput = styled.input`
     @media screen and (min-width: 600px) { 
       min-width: 300px;
     }
-    :focus,
-    :focus-visible {
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
       outline: none;
     }
-    :focus ~ ${StyledInputTextUnderline}::before {
+    &:focus ~ ${StyledInputTextUnderline}::before {
       opacity: 0;
     }
-    :placeholder-shown + ${StyledInputTextLabel} {
+    &:placeholder-shown + ${StyledInputTextLabel} {
       transform: translate(6px, 2px);
     }
-    :focus + ${StyledInputTextLabel} {
+    &:focus + ${StyledInputTextLabel} {
       transform: translate(0px, -24px);
     }
 `

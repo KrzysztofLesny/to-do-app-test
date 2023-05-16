@@ -1,21 +1,21 @@
 import { ToDoInputForm } from '../../components/ToDoInputForm/';
 import { ToDosList } from '../../components/ToDosList';
 import { useState } from 'react';
-import { Button } from "../../styled-components/Button";
-
-import styles from './Content.module.css'
+import { StyledButton } from "../../styled-components/StyledButton";
+import { StyledSubHeader } from "../../styled-components/StyledSubHeader";
+import { StyledWrapper } from "../../styled-components/StyledWrapper";
 
 export const Content = ({toDos, addToDo, removeToDo, header}) => {
     const [showForm, setShowFom] = useState(false);
 
     return (
         <>
-            <h2 className={styles.subHeader}>using {header}</h2>
-            <div className={styles.wrapper}>
+            <StyledSubHeader>using {header}</StyledSubHeader>
+            <StyledWrapper>
                 <ToDosList toDos={toDos} removeToDo={removeToDo} />
-                <Button onClick={() => setShowFom(true)}>+ New task</Button>
+                <StyledButton onClick={() => setShowFom(true)}>+ New task</StyledButton>
                 {showForm && <ToDoInputForm addToDo={addToDo} closeForm={() => setShowFom(false)}/>}
-            </div>
+            </StyledWrapper>
         </>
     )
 }

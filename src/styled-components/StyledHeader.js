@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@ const Header = styled.header`
   margin-bottom: 48px;
   align-items: center;
   padding: 16px 0px;
-  box-shadow: 2px 2px 4px 0px rgba(18, 18, 18, 0.5);
+  box-shadow: var(--boxShadow);
 
   & h1 {
     font-size: 45px;
@@ -24,8 +24,20 @@ const Header = styled.header`
     font-size: 24px;
     line-height: 125%;
     font-weight: 500;
+    text-decoration: none;
+    color: var(--fontColorGray);
+  }
+  & a:hover {
+    color: var(--fontColorPrimary);
+  }
+  & a.active,
+  & a.active:hover {
+    color: transparent;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
   }
   
 `
 
-export { Header }
+export { StyledHeader }

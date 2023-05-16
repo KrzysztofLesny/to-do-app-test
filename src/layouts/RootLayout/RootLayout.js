@@ -3,14 +3,14 @@ import {
     Outlet
 } from 'react-router-dom'
 import { ToDoProvider } from "../../context/ToDoContext";
-import { Header } from "../../styled-components/Header";
+import { StyledHeader } from "../../styled-components/StyledHeader";
 import { StyledApp } from "../../styled-components/StyledApp";
 
 export const RootLayout = () => {
     return (
         <ToDoProvider>
             <StyledApp>
-                <Header>
+                <StyledHeader>
                     <h1>TO DO APP</h1>
                     <nav>
                         <NavLink to='/' >Home</NavLink>
@@ -18,7 +18,7 @@ export const RootLayout = () => {
                         <NavLink to='state' >useState</NavLink>
                         <NavLink to='redux' >Redux</NavLink>
                     </nav>
-                </Header>
+                </StyledHeader>
                 <main>
                     <Outlet />
                 </main>
