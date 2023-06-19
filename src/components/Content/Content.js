@@ -1,9 +1,9 @@
-import { ToDoInputForm } from '../../components/ToDoInputForm/';
-import { ToDosList } from '../../components/ToDosList';
+import { ToDoInputForm } from '../ToDoInputForm/';
+import { ToDosList } from '../ToDosList';
 import { useState } from 'react';
-import { StyledButton } from "../../styled-components/StyledButton";
-import { StyledSubHeader } from "../../styled-components/StyledSubHeader";
-import { StyledWrapper } from "../../styled-components/StyledWrapper";
+import { StyledButton } from "../StyledButtons";
+import { StyledSubHeader } from "../StyledHeaders";
+import { StyledWrapper } from "../StyledWrapper/";
 
 export const Content = ({toDos, addToDo, removeToDo, header}) => {
     const [showForm, setShowFom] = useState(false);

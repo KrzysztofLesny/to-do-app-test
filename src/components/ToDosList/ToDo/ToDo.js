@@ -1,7 +1,7 @@
 import { useState } from "react"
 import trashIcon from '../../../assets/trash.svg'
-import {StyledIcon} from "../../../styled-components/StyledIcon";
-import {StyledToDo} from "../../../styled-components/StyledToDo";
+import {StyledIcon} from "../../StyledIcon";
+import {StyledToDo} from "./StyledToDo";
 
 export const ToDo = ({ toDo, removeToDo }) => {
     const [isDone, setIsDone] = useState(false)

@@ -1,5 +1,5 @@
 import { ToDo } from './ToDo'
-import {StyledToDoList} from "../../styled-components/StyledToDoList";
+import {StyledToDoList} from "./StyledToDoList";
 
 export const ToDosList = ({toDos, removeToDo}) => {
 

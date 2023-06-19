@@ -1,12 +1,8 @@
 import { useState } from "react"
 import ReactDOM from "react-dom";
-import {InputFormBackdrop} from "../../styled-components/InputFormBackdrop";
-import {StyledForm} from "../../styled-components/StyledForm";
-import {StyledLabel} from "../../styled-components/StyledLabel";
-import {StyledTextInput} from "../../styled-components/StyledTextInput";
-import {StyledInputTextLabel} from "../../styled-components/StyledInputTextLabel";
-import {StyledInputTextUnderline} from "../../styled-components/StyledInputTextUnderline";
-import {StyledSmallButton} from "../../styled-components/StyledSmallButton";
+import {StyledForm, InputFormBackdrop} from "../StyledForm";
+import {StyledLabel, StyledTextInput, StyledInputTextLabel, StyledInputTextUnderline} from "../StyledLabel";
+import {StyledSmallButton} from "../StyledButtons";
 
 export const ToDoInputForm = ({addToDo, closeForm}) => {
     const [toDo, setToDo] = useState('');

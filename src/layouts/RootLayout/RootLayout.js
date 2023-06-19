@@ -3,8 +3,8 @@ import {
     Outlet
 } from 'react-router-dom'
 import { ToDoProvider } from "../../context/ToDoContext";
-import { StyledHeader } from "../../styled-components/StyledHeader";
-import { StyledApp } from "../../styled-components/StyledApp";
+import { StyledHeader } from "../../components/StyledHeaders";
+import { StyledApp } from "../../components/StyledApp";
 
 export const RootLayout = () => {
     return (

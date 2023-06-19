@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot} from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { toDoStore } from './redux/toDoStore';
 import App from './App';
@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={toDoStore}>

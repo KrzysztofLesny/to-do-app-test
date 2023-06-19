@@ -1,3 +1,1 @@
-import { ToDo } from "./ToDo";
-
-export { ToDo }
+export { ToDo } from "./ToDo";

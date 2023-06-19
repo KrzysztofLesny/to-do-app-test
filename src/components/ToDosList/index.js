@@ -1,3 +1,1 @@
-import { ToDosList } from "./ToDosList";
-
-export { ToDosList }
+export { ToDosList } from "./ToDosList";

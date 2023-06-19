@@ -1,3 +1,1 @@
-import { ToDoInputForm } from "./ToDoInputForm";
-
-export { ToDoInputForm }
+export { ToDoInputForm } from "./ToDoInputForm";
