@@ -1,0 +1,1 @@
+export { SwapiLayout } from "./SwapiLayout"

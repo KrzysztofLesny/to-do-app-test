@@ -15,29 +15,6 @@ const StyledHeader = styled.header`
     line-height: 110%;
     font-weight: 600;
   }
-  & nav {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-  }
-  & a {
-    font-size: 24px;
-    line-height: 125%;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--fontColorGray);
-  }
-  & a:hover {
-    color: var(--fontColorPrimary);
-  }
-  & a.active,
-  & a.active:hover {
-    color: transparent;
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-  
 `
 
 const StyledSubHeader = styled.h2`
