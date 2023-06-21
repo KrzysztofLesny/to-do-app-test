@@ -1,24 +1,49 @@
 import { useLoaderData } from "react-router-dom"
+import { 
+    StyledApiResultsContainer, 
+    StyledApiResultsHeader, 
+    StyledApiResultsTable, 
+    StyledApiResultsTableHeader, 
+    StyledApiResultsTableRow 
+} from "../../components/StyledApiResults";
 
 export const Loader = () => {
     const people = useLoaderData();
 
     return (
-        <>
-            LOADER
-            {people.results.map((person, id) => (
-                <p key={id}>{id+1} {person.name}</p>
-            ))}
-        </>
+        <StyledApiResultsContainer>
+            <StyledApiResultsHeader>Loader</StyledApiResultsHeader>
+            {people && 
+            <StyledApiResultsTable>
+                <StyledApiResultsTableHeader>
+                    <p>Num.</p>
+                    <p>Name</p>
+                    <p>Height</p>
+                    <p>Weight</p>
+                    <p>Hair Color</p>
+                </StyledApiResultsTableHeader>
+                {people.results.map((person, id) => (
+                    <StyledApiResultsTableRow key={id}>
+                        <p>{id+1}</p>
+                        <p>{person.name}</p>
+                        <p>{person.height}</p>
+                        <p>{person.mass}</p>
+                        <p>{person.hair_color}</p>
+                    </StyledApiResultsTableRow>  
+                ))}
+            </StyledApiResultsTable>
+            }
+        </StyledApiResultsContainer>
     )
 }
 
 //LOADER
 export const swapiLoader = async () => {
-    const res = fetch('https://swapi.dev/api/people/')
-    .then(res => {
-        return res.json();
-    })
+    const res = await fetch('https://swapi.dev/api/people/')
 
-    return res;
+    if(!res.ok) {
+        throw Error(`Couldn't access data from API`);
+    }
+    
+    return res.json();
 }

@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react"
 import { StyledLoader } from "../../components/StyledLoader";
+import { 
+    StyledApiResultsContainer, 
+    StyledApiResultsHeader, 
+    StyledApiResultsTable, 
+    StyledApiResultsTableHeader, 
+    StyledApiResultsTableRow 
+} from "../../components/StyledApiResults";
 
 export const Effect = () => {
     const [people, setPeople] = useState(null);
     const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
-            fetch('https://swapi.dev/api/people/')
+        async function fetchData() {
+            await fetch('https://swapi.dev/api/people/')
                 .then(res => {
                     console.log(res)
                     if (!res.ok) {
@@ -22,11 +30,13 @@ export const Effect = () => {
                 .catch((err) => {
                     console.log(err.message)
                 })
-        }, []);
+        }
+        fetchData();   
+    }, []);
 
     return (
-        <>
-            EFFECT
+        <StyledApiResultsContainer>
+            <StyledApiResultsHeader>effect</StyledApiResultsHeader>
             {isPending &&
             <StyledLoader>
                 <div></div>
@@ -37,9 +47,26 @@ export const Effect = () => {
                 <div></div>
             </StyledLoader>
             }
-            {people && people.map((person, id) => (
-                <p key={id}>{id+1} {person.name}</p>
-            ))}
-        </>
+            {people && 
+            <StyledApiResultsTable>
+                <StyledApiResultsTableHeader>
+                    <p>Num.</p>
+                    <p>Name</p>
+                    <p>Height</p>
+                    <p>Weight</p>
+                    <p>Hair Color</p>
+                </StyledApiResultsTableHeader>
+                {people.map((person, id) => (
+                    <StyledApiResultsTableRow key={id}>
+                        <p>{id+1}</p>
+                        <p>{person.name}</p>
+                        <p>{person.height}</p>
+                        <p>{person.mass}</p>
+                        <p>{person.hair_color}</p>
+                    </StyledApiResultsTableRow>  
+                ))}
+            </StyledApiResultsTable>
+            }
+        </StyledApiResultsContainer>
     )
 }

@@ -25,9 +25,11 @@ const GlobalStyle = createGlobalStyle`
       --fontColorGray: rgb(102, 102, 102);
       --baseLightness: 50%;
       --lightLightness: 98%;
+      --mediumLightness: 80%;
       --darkLightness: 30%;
       --blueBerry: hsl(271, 76%, var(--baseLightness));
       --lightBlueBerry: hsl(271, 76%, var(--lightLightness));
+      --mediumLightBlueBerry: hsl(271, 76%, var(--mediumLightness));
       --darkBlueBerry: hsl(271, 76%, var(--darkLightness));
       --white: rgb(255, 255, 255);
   }
