@@ -1,1 +1,1 @@
-export * from "./StyledLoader"
+export * from "./Loader";
