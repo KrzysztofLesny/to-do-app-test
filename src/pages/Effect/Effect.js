@@ -13,26 +13,23 @@ export const Effect = () => {
     const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
-        async function fetchData() {
-            await fetch('https://swapi.dev/api/people/')
-                .then(res => {
-                    console.log(res)
-                    if (!res.ok) {
-                        throw Error('Could not fetch data');
-                    }
-                    return res.json();
-                })
-                .then(data => {
-                    console.log(data.results);
-                    setPeople(data.results);
-                    setIsPending(false);
-                })
-                .catch((err) => {
-                    console.log(err.message)
-                })
-        }
-        fetchData();   
-    }, []);
+        fetch('https://swapi.dev/api/people/')
+            .then(res => {
+                console.log(res)
+                if (!res.ok) {
+                    throw Error('Could not fetch data');
+                }
+                return res.json();
+            })
+            .then(data => {
+                console.log(data.results);
+                setPeople(data.results);
+                setIsPending(false);
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
+        }, []);
 
     return (
         <StyledApiResultsContainer>
